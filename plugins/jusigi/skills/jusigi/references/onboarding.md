@@ -13,12 +13,12 @@ Inspect current changes before editing. A repository URL does not by itself auth
 ## Stage 2: integrations
 
 - Broker: `dry-run`, `kis`, `ls`, or `shinhan`
-- Intended outcome: paper trading or live adapter code that stays disabled
+- Intended outcome: research-only or paper trading
 - Market scope: Korean equities/ETFs only by default
 - Optional OpenAI analysis: yes/no
 - Optional Telegram notification: yes/no
 
-Return secret names, not prompts for values. Typical names are `OPENAI_API_KEY`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, and provider-specific app-key/secret/account fields defined from current official documentation.
+Return secret names, not prompts for values. Typical names are `OPENAI_API_KEY`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, and provider-specific paper-environment fields defined from current official documentation. Do not collect or implement live-order credentials.
 
 ## Stage 3: policy
 

@@ -11,8 +11,8 @@ Implement explicit methods for:
 - account balance and buying power
 - holdings and average prices
 - open orders and recent fills
-- submit order with client idempotency key when supported
-- query/cancel order
+- submit a paper/simulated order with an idempotency key
+- query/cancel a paper/simulated order
 - paper/live environment identity
 
 Normalize responses into internal models. Keep provider transaction codes and endpoints isolated inside the adapter.
@@ -24,8 +24,8 @@ Raise a typed unavailable/ambiguous error rather than returning zero or an empty
 ## Provider selection
 
 - `dry-run`: always available; must never make broker network calls.
-- `kis`: generate an adapter only after verifying current KIS Developers paper/live capabilities and account eligibility.
-- `ls`: generate an adapter only after verifying current LS Securities OpenAPI paper/live capabilities and GitHub-hosted runner compatibility.
-- `shinhan`: verify the currently offered Shinhan retail API and runtime requirements. Do not assume a Windows/ActiveX or HTTP interface from memory.
+- `kis`: generate paper-market and paper-order code only after verifying current KIS Developers documentation and account eligibility.
+- `ls`: generate paper-market and paper-order code only after verifying current LS Securities OpenAPI documentation and GitHub-hosted runner compatibility.
+- `shinhan`: verify currently offered paper or read-only interfaces and runtime requirements. Do not assume a Windows/ActiveX or HTTP interface from memory.
 
-If official documents are unavailable or ambiguous, leave a typed stub that fails closed and explain the blocker.
+If official documents are unavailable, ambiguous, or do not offer a suitable paper environment, leave a typed stub that fails closed and explain the blocker. Never substitute a live order endpoint.

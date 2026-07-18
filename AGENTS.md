@@ -17,7 +17,7 @@ Jusigi generates and audits source code in user-controlled repositories. It is n
 ## Safety invariants
 
 - Never ask for, store, log, commit, or echo credential values or real account/portfolio data.
-- Never add a live order implementation without explicit scope, current official provider documentation, paper tests, persistent idempotency, quote freshness, reconciliation, and a kill switch.
+- Never add, generate, modify, or enable a live investment-trade endpoint in this public plugin.
 - Keep the generated template live-disabled, short-selling-disabled, and allowlist-deny-by-default.
 - Keep model output separated from deterministic risk checks and broker execution.
 - Preserve the five positive and three negative public-submission cases unless submission requirements change.
@@ -40,4 +40,4 @@ Also run the installed `skill-creator` and `plugin-creator` validators before re
 - Test marketplace installation in a clean environment.
 - Forward-test all submission cases.
 - Verify public privacy, terms, support, and security links.
-- State provider maturity accurately; do not call an adapter live-ready merely because unit tests pass.
+- State provider maturity accurately and describe only research or paper-environment support.

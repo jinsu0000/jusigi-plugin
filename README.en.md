@@ -24,10 +24,10 @@ The supported Skill mention is `$jusigi`, not `/jusigi`.
 - Paper/dry-run only; live trading and short selling are disabled.
 - An empty user-approved allowlist blocks all orders.
 - Model output is an untrusted proposal and cannot bypass deterministic code.
-- Broker adapters fail closed until current official documentation, paper tests, real-time quote validation, idempotency, and reconciliation are complete.
+- The public Skill generates paper-environment adapters only and does not implement or enable live investment-trade execution.
 - Users configure credential values directly in GitHub Secrets outside chat.
 
-Version 0.1 ships the reusable repository contract, generator, risk gate, dry-run broker, tests, and scheduled workflow baseline. Provider-specific market/news and broker adapters are completed by Codex during explicit, repository-scoped onboarding.
+Version 0.1 ships the reusable repository contract, generator, risk gate, dry-run broker, tests, and scheduled workflow baseline. Provider-specific market/news and paper-broker adapters are completed by Codex during explicit, repository-scoped onboarding.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), and [SUPPORT.md](SUPPORT.md).
 

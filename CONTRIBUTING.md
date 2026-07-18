@@ -1,6 +1,6 @@
 # Contributing
 
-Contributions are welcome, especially deterministic risk tests, Korean broker paper-environment adapters, data-freshness checks, and Korean documentation.
+Contributions are welcome, especially deterministic risk tests, Korean broker paper-environment adapters, data-freshness checks, and Korean documentation. Live investment-trade execution is outside this public plugin's scope.
 
 ## Rules
 

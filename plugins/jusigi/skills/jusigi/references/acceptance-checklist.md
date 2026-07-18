@@ -8,7 +8,7 @@
 - [ ] All tradeable symbols are on an explicit allowlist.
 - [ ] Model output is structured and cannot bypass `RiskGate`.
 - [ ] Paper mode is the default and live mode remains disabled.
-- [ ] Live adapters fail closed until every prerequisite is met.
+- [ ] No live order adapter was generated, modified, or enabled.
 - [ ] Tests cover cash, holdings, allowlist, confidence, freshness, session, order count, position size, and duplicate-order rejection.
 - [ ] Workflow permissions are read-only unless a documented need exists.
 - [ ] Scheduled jobs have timeouts and concurrency controls.

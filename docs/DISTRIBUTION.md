@@ -33,4 +33,4 @@ The review portal is `https://platform.openai.com/plugins`. Submission starts re
 - Ask early users to share only sanitized generated diffs and paper-test results.
 - Label beginner issues and maintain a provider-adapter checklist.
 
-Avoid marketing a live adapter until its official documentation, account eligibility, real-time quotes, idempotency, reconciliation, and failure tests are independently reproducible.
+[OpenAI's public app guidelines](https://developers.openai.com/apps-sdk/app-guidelines) prohibit execution of investment trades. Keep the directory submission strictly research/paper-oriented, never collect authentication secrets, and do not generate live order endpoints through the public Skill. Approval is still subject to OpenAI review.
