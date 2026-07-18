@@ -1,0 +1,7 @@
+interface:
+  display_name: "Jusigi"
+  short_description: "한국 주식 자동화 저장소를 안전하게 구성합니다"
+  default_prompt: "Use $jusigi to scaffold safe, user-controlled Korean stock research and paper-trading automation in my repository."
+
+policy:
+  allow_implicit_invocation: false

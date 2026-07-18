@@ -1,0 +1,31 @@
+schema_version: 1
+
+mode:
+  broker_provider: __JUSIGI_BROKER__
+  paper_trading_enabled: true
+  live_enabled: false
+  short_selling_enabled: false
+
+allocation:
+  core_percent: __JUSIGI_CORE_RATIO__
+  satellite_percent: __JUSIGI_SATELLITE_RATIO__
+  minimum_cash_reserve_krw: 100000
+
+universe:
+  # Add only symbols the user explicitly approved. Empty means no order can pass.
+  allowlist: []
+  require_manual_approval_for_new_symbols: true
+
+risk:
+  minimum_confidence: 0.80
+  max_order_krw: 100000
+  max_position_percent: 20
+  max_orders_per_run: 1
+  max_daily_loss_krw: 100000
+  max_quote_age_seconds: 30
+  require_market_open: true
+
+schedule:
+  timezone: Asia/Seoul
+  report_cron_utc: "__JUSIGI_REPORT_CRON__"
+  paper_trade_cron_utc: "__JUSIGI_TRADE_CRON__"

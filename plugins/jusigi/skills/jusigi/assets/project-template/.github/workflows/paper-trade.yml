@@ -1,0 +1,35 @@
+name: Guarded paper trade
+
+on:
+  schedule:
+    # UTC; default corresponds to hourly at minute 10 during KRX hours on weekdays.
+    - cron: "__JUSIGI_TRADE_CRON__"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: jusigi-paper-trade
+  cancel-in-progress: false
+
+jobs:
+  paper-trade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      JUSIGI_LIVE_ENABLED: "false"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Refuse incomplete paper integration
+        run: |
+          echo "Jusigi paper workflow is scaffolded but no tested market/model adapter is configured."
+          echo "Run healthcheck only until onboarding completes the adapters."
+          PYTHONPATH=src python -m jusigi.main healthcheck

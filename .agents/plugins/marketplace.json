@@ -1,0 +1,20 @@
+{
+  "name": "jusigi-plugins",
+  "interface": {
+    "displayName": "Jusigi Plugins"
+  },
+  "plugins": [
+    {
+      "name": "jusigi",
+      "source": {
+        "source": "local",
+        "path": "./plugins/jusigi"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

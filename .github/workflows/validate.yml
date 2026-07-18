@@ -1,0 +1,33 @@
+name: Validate plugin
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate JSON and compile scripts
+        run: |
+          python -m json.tool .agents/plugins/marketplace.json >/dev/null
+          python -m json.tool plugins/jusigi/.codex-plugin/plugin.json >/dev/null
+          python -m compileall -q plugins/jusigi/skills/jusigi/scripts
+      - name: Forward-test generated repository
+        run: |
+          python plugins/jusigi/skills/jusigi/scripts/scaffold.py --target /tmp/jusigi-generated --broker dry-run --core-ratio 50
+          python plugins/jusigi/skills/jusigi/scripts/validate_target.py /tmp/jusigi-generated
+          python -m pip install -r /tmp/jusigi-generated/requirements.txt
+          PYTHONPATH=/tmp/jusigi-generated/src python -m unittest discover -s /tmp/jusigi-generated/tests -v
+          PYTHONPATH=/tmp/jusigi-generated/src python -m jusigi.main healthcheck --policy /tmp/jusigi-generated/config/investment-policy.yaml

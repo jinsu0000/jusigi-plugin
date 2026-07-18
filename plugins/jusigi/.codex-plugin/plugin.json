@@ -1,0 +1,35 @@
+{
+  "name": "jusigi",
+  "version": "0.1.0",
+  "description": "Generate safe, user-controlled GitHub Actions automation for Korean stock research and guarded trading.",
+  "author": {
+    "name": "jinsu0000",
+    "url": "https://github.com/jinsu0000"
+  },
+  "homepage": "https://github.com/jinsu0000/jusigi-plugin#readme",
+  "repository": "https://github.com/jinsu0000/jusigi-plugin",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "github-actions",
+    "korean-stocks",
+    "paper-trading",
+    "trading-automation"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Jusigi",
+    "shortDescription": "한국 주식 자동화 저장소를 안전하게 구성합니다.",
+    "longDescription": "사용자 소유 저장소에 한국 주식 리서치, Telegram 알림, 모의투자, 결정론적 리스크 게이트와 GitHub Actions 워크플로를 생성합니다.",
+    "developerName": "jinsu0000",
+    "category": "Productivity",
+    "capabilities": ["Write"],
+    "websiteURL": "https://github.com/jinsu0000/jusigi-plugin",
+    "privacyPolicyURL": "https://github.com/jinsu0000/jusigi-plugin/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/jinsu0000/jusigi-plugin/blob/main/TERMS.md",
+    "defaultPrompt": [
+      "$jusigi로 내 저장소에 한국 주식 모의투자 자동화를 구성해 줘.",
+      "$jusigi로 기존 주식 자동화 저장소의 안전 설정을 점검해 줘."
+    ]
+  }
+}
